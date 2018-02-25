@@ -1,0 +1,11 @@
+{application,hangman,
+             [{applications,[kernel,stdlib,elixir,logger]},
+              {description,"hangman"},
+              {modules,['Elixir.Game','Elixir.Hangman',
+                        'Elixir.Hangman.Startgame.Readfile',
+                        'Elixir.Hangman.Startgame.Start_game',
+                        'Elixir.Hangman.Startgame.Supervisor',
+                        'Elixir.Hangman.Supervisor']},
+              {registered,[]},
+              {vsn,"0.1.0"},
+              {extra_applications,[logger]}]}.
