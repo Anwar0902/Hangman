@@ -1,6 +1,8 @@
 # HANGMAN
 
-**TODO: Add description**
+**To start the program type iex -S mix.
+ then create the process by Hangman.Startgame.Start_game.start_link.
+ then call the play_game by Hangman.Startgame.Start_game.play_game.**
 
 ## Installation
 

@@ -27,10 +27,7 @@ defmodule Game do
       |> Enum.filter(&(&1 == "-"))
       |> Enum.count()
 
-    # IO.puts("No. of unfilled_positions :- #{unfilled_positions_before}")
     required_word = match_function(data, word, required_word)
-
-    # IO.inspect(required_word)
 
     unfilled_positions_after =
       required_word
