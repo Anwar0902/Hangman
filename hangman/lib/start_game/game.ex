@@ -36,7 +36,6 @@ defmodule Game do
 
     if unfilled_positions_before == unfilled_positions_after do
       IO.puts(@list_of_emoji[count])
-      # IO.puts("*****************************************************")
       {unfilled_positions_after, count + 1, required_word}
     else
       {unfilled_positions_after, count, required_word}

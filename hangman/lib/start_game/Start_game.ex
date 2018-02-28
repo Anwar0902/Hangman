@@ -1,7 +1,6 @@
 defmodule Hangman.Startgame.Start_game do
   use GenServer
   alias Hangman.Startgame.Readfile
-  import Game
 
   @moduledoc """
   Documentation for HANGMAN.
@@ -20,12 +19,12 @@ defmodule Hangman.Startgame.Start_game do
 
   def init(_) do
     guess_word = Readfile.fetch_data()
-    # s guess_word = ["a", "n", "w", "a", "r"]
+    # guess_word = ["a", "n", "w", "a", "r"]
     {:ok, guess_word}
   end
 
   def play_game() do
-    GenServer.call(:hangman_game, {:play_game}, 20000)
+    GenServer.call(:hangman_game, {:play_game}, :infinity)
   end
 
   # callback
@@ -40,10 +39,17 @@ defmodule Hangman.Startgame.Start_game do
 
   def read_input() do
     data = IO.gets("Try Your Luck :- ")
-    data = String.trim(data)
+
+    data =
+      data
+      |> String.trim()
   end
 
-  def win_or_loose(_word, 6, _required_word), do: "YOU LOOSE"
+  def win_or_loose(word, 6, _required_word) do
+    IO.puts("CORRECT WORD IS:- #{word}")
+    "YOU LOOSE"
+  end
+
   def win_or_loose(word, count, required_word), do: startgame(word, count, required_word)
 
   def startgame(word, count, required_word) do
