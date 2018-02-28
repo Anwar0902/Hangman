@@ -19,18 +19,18 @@ defmodule Hangman.Startgame.Start_game_Test do
     # assert is_binary(result)
   end
 
-  test "win or lose" do
-    result = Start_game.win_or_lose(["a", "n"], 6, ["a", "b"])
-    assert result == "YOU LOSE"
+  test "win or loose" do
+    result = Start_game.win_or_loose(["a", "n"], 6, ["a", "b"])
+    assert result == "YOU LOOSE"
   end
 
-  test "win OR lose" do
-    result = Start_game.win_or_lose(["a", "n"], 6, ["a", "n"])
+  test "win OR loose" do
+    result = Start_game.win_or_loose(["a", "n"], 6, ["a", "n"])
     refute result == "YOU WIN"
   end
 
   test "Startgame" do
-    result = Start_game.startgame(["a", "b"], 6, ["a", "b"])
+    result = Start_game.startgame(["a", "b"], 6, ["a", "_"])
     assert result == "YOU WIN"
   end
 end

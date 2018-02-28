@@ -43,8 +43,8 @@ defmodule Hangman.Startgame.Start_game do
     data = String.trim(data)
   end
 
-  def win_or_lose(word, 6, required_word), do: "YOU LOSE"
-  def win_or_lose(word, count, required_word), do: startgame(word, count, required_word)
+  def win_or_loose(_word, 6, _required_word), do: "YOU LOOSE"
+  def win_or_loose(word, count, required_word), do: startgame(word, count, required_word)
 
   def startgame(word, count, required_word) do
     IO.puts("*****************************************************")
@@ -57,7 +57,7 @@ defmodule Hangman.Startgame.Start_game do
     if unfilled_positions == 0 do
       "YOU WIN"
     else
-      win_or_lose(word, count, required_word)
+      win_or_loose(word, count, required_word)
     end
   end
 end
